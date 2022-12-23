@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <style>
+      body {
+        position: relative;
+      }
+      .col {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="col" id="noise"></div> -->
+    <script src="./ImprovedNoise.js"></script>
+    <script>
+      (function () {
+        for (let j = 0; j < 100; j++) {
+          const k = document.createElement('div');
+          k.classList.add('col');
+          document.body.appendChild(k);
+          const offsetX = Math.round(Math.random() * 80);
+          const offsetY = Math.round(Math.random() * 80);
+          const r = Math.round(Math.random() * 255);
+          const g = Math.round(Math.random() * 255);
+          const b = Math.round(Math.random() * 255);
+          const a = Math.random() / 2;
+          k.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
+
+          const w = Math.random() * 100 + 100;
+          k.style.width = `${w}px`;
+          k.style.height = `${w}px`;
+
+          let initX = Math.random();
+          let initY = Math.random();
+          setInterval(function () {
+            // const el = document.getElementById('noise');
+
+            let x = initX;
+            let y = 0;
+            let z = 0;
+            initX += 0.003;
+            let x2 = initY;
+            initY += 0.002;
+
+            let noise = ImprovedNoise.noise(x, y, z);
+            let noiseY = ImprovedNoise.noise(x2, y, z);
+            // console.log(noise * 100);
+            k.style.left = `calc(${offsetX}% + ${noise * 100}px)`;
+            k.style.top = `calc(${offsetY}% + ${noiseY * 100}px)`;
+          }, 1000 / 60);
+        }
+      })();
+    </script>
+  </body>
+</html>

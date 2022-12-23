@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+      }
+      .col {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="col" id="noise"></div>
+    <div class="col" id="rand"></div>
+    <script src="./ImprovedNoise.js"></script>
+    <script>
+      (function () {
+        document.body.style.backgroundColor = '#67afba';
+
+        for (let i = 0; i < 5000; i++) {
+          let x = Math.random() * (i / 10000);
+          let y = Math.random() * ((i + 7) / 10000);
+          let z = Math.random() * ((i * 2) / 10000);
+          let noise = ImprovedNoise.noise(x, y, z);
+          console.log(noise);
+          //console.log(noise * 127 + 127);
+          //let width1 = (noise * 200) + 200;
+          let width1 = 6;
+          let color1 = noise * 127 + 127;
+          let el1 = createDiv(width1, color1);
+
+          //let width2 = Math.random() * 150 + 150;
+          // let width2 = 6;
+          // let color2 = Math.random() * 255;
+          // let el2 = createDiv(width2, color2);
+
+          document.getElementById('noise').appendChild(el1);
+          // document.getElementById('rand').appendChild(el2);
+        }
+
+        function createDiv(width, color) {
+          const el = document.createElement('div');
+          el.style.width = `${width}px`;
+          //el.style.backgroundColor = '#fd34ad';
+          el.style.backgroundColor = `rgb(${color},${color},${color})`;
+          el.style.height = `${width}px`;
+          el.style.margin = '0 auto';
+          return el;
+        }
+      })();
+    </script>
+  </body>
+</html>
