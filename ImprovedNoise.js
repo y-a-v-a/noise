@@ -61,7 +61,7 @@ class ImprovedNoise {
       lerp(
         v,
         lerp(u, grad(p[AA], x, y, z), grad(p[BA], x - 1, y, z)),
-        lerp(u, grad(p[AB], x, y - 1, z), grad(p[BB], x - 1, y - 1, z))
+        lerp(u, grad(p[AB], x, y - 1, z), grad(p[BB], x - 1, y - 1, z)),
       ),
       lerp(
         v,
@@ -69,9 +69,9 @@ class ImprovedNoise {
         lerp(
           u,
           grad(p[AB + 1], x, y - 1, z - 1),
-          grad(p[BB + 1], x - 1, y - 1, z - 1)
-        )
-      )
+          grad(p[BB + 1], x - 1, y - 1, z - 1),
+        ),
+      ),
     );
   }
 }
