@@ -41,6 +41,8 @@ A sophisticated homage to Piet Mondrian's geometric compositions featuring:
 - Responsive design that adapts to viewport orientation
 - Smooth 30fps animation creating organic movement within geometric constraints
 
+![Perlin Noise Piet Mondrian Animation](perlin-noise-piet-mondriaan.png)
+
 ## Technical Details
 
 ### Perlin Noise Implementation
