@@ -68,16 +68,10 @@ The JavaScript port maintains full compatibility with Ken Perlin's original Java
 3. `index2.html` - Animated floating particles
 4. `index3.html` - Mondrian-inspired geometric animation
 
-## Dependencies
-
-- No external JavaScript libraries required
-- Uses native HTML5 and CSS3 features
-- Node.js dependencies listed in `package.json` for development
-
 ## Credits
 
 - **Ken Perlin** - Original Improved Noise algorithm (2002)
-- **Vincent Bruijn** - JavaScript port and artistic implementations
+- **Vincent Bruijn** - JavaScript port and artistic implementations (2022)
 - Inspired by Piet Mondrian's geometric compositions
 
 ## License
@@ -90,4 +84,5 @@ ISC License - See package.json for details
 - Original paper reference: `paper445.pdf`
 
 Unless stated otherwise (c) 2022
+
 Vincent Bruijn <vebruijn@gmail.com>
